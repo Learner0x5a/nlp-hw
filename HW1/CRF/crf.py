@@ -119,11 +119,13 @@ def recover_test(_input, _output):
                 fo.write(' ' + char + ' ')
     fi.close()
     fo.close()
-    
-target = 'pku_test'
+
+import sys
+
+target = sys.argv[1]
 grams = bigram('pku_training.utf8','pku_training.bigrams')
-train_label('pku_training.utf8','pku_training.label',use_gram = False)
-os.system('crf_learn -c 1.0 -f 3 -p 64 template pku_training.label crf_model')
+train_label('pku_training.utf8','pku_training.trainlabel',use_gram = False)
+os.system('crf_learn -c 1.0 -f 3 -p 64 template pku_training.trainlabel crf_model')
 test_label(target+'.utf8',target+'.label')
 os.system('crf_test -m crf_model '+target+'.label > '+target+'.result')
 recover_test(target+'.result',target+'.crf_result')
