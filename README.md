@@ -12,7 +12,7 @@
  + `textrank.py` / `python3` /  图排序式摘要：TextRank (jieba)
  + TODO: 神经网络自动摘要。 `doc2vec + seq2seq` / `BERT`
 
-## Final - SQUAD数据集评测 <font color=red>放弃</font> `目录QA`
+## Final - SQUAD数据集评测 `:cry:放弃` `目录QA`
  + seq2seq模型，收敛太慢，1个epoch要1h
  + BERT模型，直接爆内存/显存
 
