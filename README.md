@@ -19,6 +19,12 @@
 ## Final - 代码分发 复现&改进"code mapping in heterogeneous platforms using deep learning and llvm-ir" (DAC '19, Proceedings of the 56th Annual Design Automation Conference 2019)
  + 数据集：来自"End-to-end Deep Learning of Optimization Heuristics" (PACT'17 Best Paper) 
  + 预处理：TF-IDF vs. Doc2vec
- + 流程 `TODO`
- + 网络：LSTM/textCNN
+ + 流程
+  - 1. load_csv.py: 从csv文件提取源文件
+  - 2. clang编译源文件，例如 clang -c -x cl -emit-llvm -S -cl-std=CL2.0 -Xclang -finclude-default-header 0.cl -o 0.ll
+  - 3. tokenizer.py: 符号化IR
+  - 4. vectorizer.py: 预处理&神经网络
+ + 网络：LSTM
  + 可视化：TSNE
+ + Tensorflow版本：1.12.0
+ + Clang版本：10.0
